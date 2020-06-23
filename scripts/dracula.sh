@@ -28,6 +28,7 @@ main()
   show_right_sep=$(get_tmux_option "@dracula-show-right-sep" )
   show_border_contrast=$(get_tmux_option "@dracula-border-contrast" false)
   show_cpu_percentage=$(get_tmux_option "@dracula-cpu-percent" false)
+  show_kubeconfig=$(get_tmux_option "@dracula-kubeconfig" false)
 
   # Dracula Color Pallette
   white='#f8f8f2'
@@ -98,6 +99,11 @@ main()
       tmux set-option -g  status-right ""
       powerbg=${gray}
 
+      if $show_kubeconfig; then # kubeconfig
+        tmux set-option -g  status-right "#[fg=${red},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${red}] #($current_dir/custom/kube-tmux.sh)"
+        powerbg=${red}
+      fi
+
       if $show_battery; then # battery
         tmux set-option -g  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh)"
         powerbg=${pink}
@@ -131,7 +137,9 @@ main()
     tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
 
     tmux set-option -g  status-right ""
-
+      if $show_kubeconfig; then #kubeconfig
+        tmux set-option -g  status-right "#[fg=${dark_gray},bg=${red}] #($current_dir/custom/kube-tmux.sh) "
+      fi
       if $show_battery; then # battery
         tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
       fi
