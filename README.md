@@ -35,6 +35,7 @@ Configuration and options can be found at [draculatheme.com/tmux](https://dracul
      * @dracula-airpods
  * Updated weather script ported from Jezen Thomas <jezen@jezenthomas.com> and found in github.com/kylepeeler/tmux-dracula is available for use.
      * Want the old one? Go get it and replace in in your own github.
+     * Weather uses OpenWeather.org API key. Please register a free account, get your API key, and export it as OWAPI in your .<shell>rc file (.zshrc, .bashrc).
 
 ## Compatibility
 
