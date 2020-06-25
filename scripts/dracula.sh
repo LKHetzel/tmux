@@ -150,7 +150,7 @@ main()
         tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
       fi
       if $show_airpods; then 
-        tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}] | #($current_dir/custom/airpods.sh) "
+        tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}]| #($current_dir/custom/airpods.sh) "
       fi
       if $show_cpu_percentage; then
 	      tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh) "
