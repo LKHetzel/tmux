@@ -63,10 +63,10 @@ main()
       left_sep="$show_left_sep"
   fi
 
-  # start weather script in background
-  #if $show_weather; then
-  #  $current_dir/sleep_weather.sh $show_fahrenheit &
-  #fi
+   start weather script in background
+  if $show_weather; then
+    $current_dir/weather.sh &
+  fi
   
   # sets refresh interval to every 5 seconds
   tmux set-option -g status-interval 5
