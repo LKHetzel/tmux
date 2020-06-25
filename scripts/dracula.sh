@@ -108,7 +108,7 @@ main()
       if $show_battery; then # battery
         tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh)"
         if $show_airpods; then # airpods
-          "#($current_dir/custom/airpods.sh)"
+          tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) #($current_dir/custom/airpods.sh)"
         fi
         powerbg=${pink}
       fi
