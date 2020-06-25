@@ -29,12 +29,12 @@ Configuration and options can be found at [draculatheme.com/tmux](https://dracul
 ## Features added in this fork:
  
  * Adds an option to enable Kubernetes Context and Namespace display on bottom right bar, ported from Jon Mosco - https://github.com/jonmosco/kube-tmux 
-  ** @dracula-kubeconfig
-  * Please note that this is licensed differently than Dracula.
+     * @dracula-kubeconfig
+     * Please note that this is licensed differently than Dracula.
  * Adds an option to also show battery status of Apple Airpods/Airpods Pro/Beats (Case, Left, and Right) to the battery/AC section. (macOS only)
-  ** @dracula-airpods
+     * @dracula-airpods
  * Updated weather script ported from Jezen Thomas <jezen@jezenthomas.com> and found in github.com/kylepeeler/tmux-dracula is available for use.
-  ** Want the old one? Go get it and replace in in your own github.
+     * Want the old one? Go get it and replace in in your own github.
 
 ## Compatibility
 
