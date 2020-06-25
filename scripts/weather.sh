@@ -64,7 +64,8 @@ LAT=$(echo "$LOCATION" | cut -d , -f 8)
 LON=$(echo "$LOCATION" | cut -d , -f 9)
 
 
-WEATHER=$(curl --silent http://api.openweathermap.org/data/2.5/weather\?q="$CITY"\&APPID="$API_KEY"\&units=imperial)
+#WEATHER=$(curl --silent http://api.openweathermap.org/data/2.5/weather\?q="$CITY"\&APPID="$API_KEY"\&units=imperial)
+WEATHER=$(curl --silent http://api.openweathermap.org/data/2.5/weather\?lat="$LAT"\&lon="$LON"\&APPID="$API_KEY"\&units=imperial)
 
 CATEGORY=$(echo "$WEATHER" | jq .weather[0].id)
 TEMP="$(echo "$WEATHER" | jq .main.temp | cut -d . -f 1)°F"
