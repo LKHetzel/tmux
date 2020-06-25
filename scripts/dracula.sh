@@ -101,12 +101,12 @@ main()
       powerbg=${gray}
 
       if $show_kubeconfig; then # kubeconfig
-        tmux set-option -g  status-right "#[fg=${red},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${red}] #($current_dir/custom/kube-tmux.sh)"
+        tmux set-option -g  status-right "#[fg=${red},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${red}] #($current_dir/custom/kube-tmux.sh) "
         powerbg=${red}
       fi
 
       if $show_battery; then # battery
-        tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
+        tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh)"
         powerbg=${pink}
       fi
 
@@ -116,12 +116,12 @@ main()
       fi
 
       if $show_cpu_percentage; then
-	 tmux set-option -ga status-right "#[fg=${orange},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh)"
+	 tmux set-option -ga status-right "#[fg=${orange},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh) "
 	 powerbg=${orange}
       fi
 
       if $show_network; then # network
-        tmux set-option -ga status-right "#[fg=${cyan},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${cyan}] #($current_dir/network.sh)"
+        tmux set-option -ga status-right "#[fg=${cyan},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${cyan}] #($current_dir/network.sh) "
         powerbg=${cyan}
       fi
 
