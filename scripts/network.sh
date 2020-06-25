@@ -18,9 +18,10 @@ get_ssid()
 
 		Darwin)
 			if /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | grep -E ' SSID' | cut -d ':' -f 2 | sed 's/ ^*//g' &> /dev/null; then
-				echo "$WIFI_SYMBOL " "$(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | grep -E ' SSID' | cut -d ':' -f 2)" | sed 's/ ^*//g'
+				SSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | grep -E ' SSID' | cut -d ':' -f 2)
+				printf "%s %s" "$WIFI_SYMBOL" "$SSID"
 			else
-				echo "$ETH_SYMBOL - Ethernet"
+				printf "%s - Ethernet" "$ETH_SYMBOL"
 			fi
 		;;
 
