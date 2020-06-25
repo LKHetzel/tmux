@@ -76,9 +76,9 @@ main()
 {
 	# process should be cancelled when session is killed
 	if ping -q -c 1 -W 1 ipinfo.io &>/dev/null; then
-		printf "%s" "$CS $ICON $TEMP"
+		printf "%s" "$CS $ICON $TEMP" > ../data/weather.txt
 	else
-		echo "Location Unavailable"
+		echo "Location Unavailable" > ../data/weather.txt
 	fi
 }
 
