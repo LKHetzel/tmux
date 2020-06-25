@@ -29,6 +29,7 @@ main()
   show_border_contrast=$(get_tmux_option "@dracula-border-contrast" false)
   show_cpu_percentage=$(get_tmux_option "@dracula-cpu-percent" false)
   show_kubeconfig=$(get_tmux_option "@dracula-kubeconfig" false)
+  show_airpods=$(get_tmux_option "@dracula-airpods" false)
 
   # Dracula Color Pallette
   white='#f8f8f2'
