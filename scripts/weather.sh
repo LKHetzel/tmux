@@ -5,6 +5,8 @@
 #
 # By Jezen Thomas <jezen@jezenthomas.com>
 #
+# Fixes by Logan Hetzel <github.com/LKHetzel
+#
 # This script sends a couple of requests over the network to retrieve
 # approximate location data, and the current weather for that location. This is
 # useful if for example you want to display the current weather in your tmux
@@ -17,7 +19,7 @@
 # 3. Add your OpenWeatherMap API key where it says API_KEY
 
 # OPENWEATHERMAP API KEY (place yours here)
-API_KEY=""
+API_KEY=$OWAPI
 
 set -e
 
@@ -55,7 +57,7 @@ weather_icon() {
 }
 
 LOCATION=$(curl --silent http://ip-api.com/csv)
-CITY=$(echo "Indianapolis" | cut -d , -f 6)
+CITY=$(echo $LOCATION | awk -F "\"*,\"*" '{print $6}')
 LAT=$(echo "$LOCATION" | cut -d , -f 8)
 LON=$(echo "$LOCATION" | cut -d , -f 9)
 
