@@ -110,6 +110,7 @@ airpods_status() {
 
 main()
 {
+	airpods=$(airpods_status)
 	bat_stat=$(battery_status)
 	bat_perc=$(battery_percent)
 
@@ -120,7 +121,7 @@ main()
 	else
 		echo "♥ $bat_stat $bat_perc "
 	fi
-	airpods_status
+	echo "$airpods"
 }
 
 #run main driver program
