@@ -65,7 +65,7 @@ main()
 
    start weather script in background
   if $show_weather; then
-    $current_dir/weather.sh &
+    $current_dir/sleep_weather.sh &
   fi
   
   # sets refresh interval to every 5 seconds
