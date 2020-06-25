@@ -110,6 +110,11 @@ main()
         powerbg=${pink}
       fi
 
+      if $show_airpods; then # airpods
+        tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/custom/airpods.sh)"
+        powerbg=${pink}
+      fi
+
       if $show_cpu_percentage; then
 	 tmux set-option -ga status-right "#[fg=${orange},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh)"
 	 powerbg=${orange}
@@ -145,9 +150,9 @@ main()
         tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
       fi
       if $show_airpods; then #airpods battery
-        tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/custom/airpods.sh)"
+        tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/custom/airpods.sh) "
       if $show_cpu_percentage; then
-	tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh) "
+	      tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh) "
       fi
 
       if $show_network; then # network
