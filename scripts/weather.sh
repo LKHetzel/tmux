@@ -58,6 +58,8 @@ weather_icon() {
 
 LOCATION=$(curl --silent http://ip-api.com/csv)
 CITY=$(echo $LOCATION | awk -F "\"*,\"*" '{print $6}')
+STATE=$(echo $LOCATION | awk -F "\"*,\"*" '{print $4}')
+CS="$CITY, $STATE"
 LAT=$(echo "$LOCATION" | cut -d , -f 8)
 LON=$(echo "$LOCATION" | cut -d , -f 9)
 
@@ -73,7 +75,7 @@ main()
 {
 	# process should be cancelled when session is killed
 	if ping -q -c 1 -W 1 ipinfo.io &>/dev/null; then
-		printf "%s" "$CITY $ICON $TEMP"
+		printf "%s" "$CS $ICON $TEMP"
 	else
 		echo "Location Unavailable"
 	fi
