@@ -111,7 +111,7 @@ main()
       fi
 
       if $show_airpods; then # airpods
-        tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] | #($current_dir/custom/airpods.sh)"
+        tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}]| #($current_dir/custom/airpods.sh)"
         powerbg=${pink}
       fi
 
