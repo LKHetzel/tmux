@@ -17,7 +17,7 @@
 # 3. Add your OpenWeatherMap API key where it says API_KEY
 
 # OPENWEATHERMAP API KEY (place yours here)
-API_KEY="412a6516f506201b00a7bc576cdd287a"
+API_KEY=""
 
 set -e
 
