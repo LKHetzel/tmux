@@ -105,7 +105,7 @@ main()
       fi
 
       if $show_battery; then # battery
-        tmux set-option -g  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh)"
+        tmux set-option -ga  status-right "#[fg=${pink},bg=${powerbg},nobold,nounderscore,noitalics] ${right_sep}#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh)"
         powerbg=${pink}
       fi
 
@@ -141,7 +141,7 @@ main()
         tmux set-option -g  status-right "#[fg=${dark_gray},bg=${red}] #($current_dir/custom/kube-tmux.sh) "
       fi
       if $show_battery; then # battery
-        tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
+        tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
       fi
 
       if $show_cpu_percentage; then
